@@ -1,0 +1,2 @@
+#Delete directory from git
+git rm -r .idea/

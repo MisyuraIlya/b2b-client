@@ -1,0 +1,17 @@
+docker compose -f docker-compose.dev.yml up
+
+# TO UPDATE NODE_MODULES:
+docker exec -ti next-app /bin/sh
+npm install
+
+#Artifact Registry
+gcloud auth configure-docker europe-north1-docker.pkg.dev
+
+git checkout -- next-app/src/pages/_document.tsx
+
+docker build -t europe-north1-docker.pkg.dev/seventh-dryad-358207/b2b-client-app/b2b-client-next-app:0.8.2 next-app -f next-app/prod.Dockerfile --target runner
+docker push europe-north1-docker.pkg.dev/seventh-dryad-358207/b2b-client-app/b2b-client-next-app:0.8.2
+
+#Remove local images
+docker images | grep client-front-next
+docker image rm -f $(docker image ls | grep client-front-next | awk '{print $3}')

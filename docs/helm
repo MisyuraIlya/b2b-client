@@ -1,0 +1,5 @@
+helm install b2b-client-next-app helm
+
+helm upgrade b2b-client-next-app helm
+
+helm uninstall b2b-client-next-app --namespace default

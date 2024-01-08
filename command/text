@@ -1,0 +1,79 @@
+Updating 3fcc6d7..b304d4c
+Fast-forward
+ next-app/package-lock.json                                                                                            |  92 +++++++++++++++++++++-----------------------
+ next-app/package.json                                                                                                 |   2 +-
+ next-app/src/app/[locale]/{ => (shop)}/about/page.tsx                                                                 |   0
+ next-app/src/app/[locale]/(shop)/catalog/[categoryId]/page.tsx                                                        |  13 +++++++
+ next-app/src/app/[locale]/(shop)/catalog/layout.tsx                                                                   |  23 +++++++++++
+ next-app/src/app/[locale]/(shop)/layout.tsx                                                                           |  23 +++++++++++
+ next-app/src/app/[locale]/{ => (shop)}/page.tsx                                                                       |   0
+ next-app/src/app/[locale]/layout.tsx                                                                                  |  18 +++++++--
+ next-app/src/components/CategorySubMenu/CategorySubMenu.styles.ts                                                     |  42 ++++++++++++++++++++
+ next-app/src/components/CategorySubMenu/CategorySubMenu.tsx                                                           |  68 ++++++++++++++++++++++++++++++++
+ next-app/src/components/CategorySubMenu/index.ts                                                                      |   1 +
+ next-app/src/components/CategorySubMenu/types/index.ts                                                                |   6 +++
+ next-app/src/components/SearchField/SearchField.styles.ts                                                             |  14 +++++++
+ next-app/src/components/SearchField/SearchField.tsx                                                                   |  29 ++++++++++++++
+ next-app/src/components/SearchField/index.ts                                                                          |   1 +
+ next-app/src/content/appBar/CategoriesBar/CategoriesBar.tsx                                                           |  22 +++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/SubheaderCategoriesMenu.tsx                         |  47 +++++++++++++++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/index.ts                                            |   1 +
+ .../src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/CategoriesBurger.styles.ts    |  56 +++++++++++++++++++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/CategoriesBurger.tsx     | 126 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/index.ts                 |   1 +
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/CategoriesList.styles.ts   |  45 ++++++++++++++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/CategoriesList.tsx         | 108 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/index.ts                   |   1 +
+ next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/types/index.ts                                      |   5 +++
+ next-app/src/content/appBar/CategoriesBar/index.ts                                                                    |   1 +
+ next-app/src/content/appBar/index.tsx                                                                                 |  20 ++++++++--
+ next-app/src/content/pages/ContentReadySlider/ContentReadySlider.tsx                                                  |   9 +----
+ next-app/src/content/pages/ContentReadySlider/templates/ContentReadySliderWow/ContentReadySliderWow.tsx               |  24 ++++++------
+ next-app/src/content/pages/ContentReadySlider/types/index.ts                                                          |   7 ----
+ next-app/src/context/CatalogContext/CatalogContext.tsx                                                                |  34 ++++++++++++++++
+ next-app/src/context/CatalogContext/catalogReducer.ts                                                                 |  32 +++++++++++++++
+ next-app/src/context/CategoriesContext/CategoriesContext.tsx                                                          |  21 ++++++++++
+ next-app/src/context/StoreContext.tsx                                                                                 |   5 ++-
+ next-app/src/context/storeReducer.ts                                                                                  |   7 +++-
+ next-app/src/provider/api/b2bApi.ts                                                                                   |  14 +++++++
+ next-app/src/types/category/index.ts                                                                                  |  12 ++++++
+ next-app/src/types/initData/index.ts                                                                                  |   2 +-
+ next-app/src/types/mui.ts                                                                                             |   3 +-
+ next-app/src/types/page/index.ts                                                                                      |  10 ++++-
+ next-app/src/types/store/catalog/index.ts                                                                             |  14 +++++++
+ next-app/src/types/store/categories/index.ts                                                                          |  10 +++++
+ next-app/src/types/store/index.ts                                                                                     |  14 ++++---
+ next-app/src/utils/useSearchParams.ts                                                                                 |   5 +++
+ 44 files changed, 893 insertions(+), 95 deletions(-)
+ rename next-app/src/app/[locale]/{ => (shop)}/about/page.tsx (100%)
+ create mode 100644 next-app/src/app/[locale]/(shop)/catalog/[categoryId]/page.tsx
+ create mode 100644 next-app/src/app/[locale]/(shop)/catalog/layout.tsx
+ create mode 100644 next-app/src/app/[locale]/(shop)/layout.tsx
+ rename next-app/src/app/[locale]/{ => (shop)}/page.tsx (100%)
+ create mode 100644 next-app/src/components/CategorySubMenu/CategorySubMenu.styles.ts
+ create mode 100644 next-app/src/components/CategorySubMenu/CategorySubMenu.tsx
+ create mode 100644 next-app/src/components/CategorySubMenu/index.ts
+ create mode 100644 next-app/src/components/CategorySubMenu/types/index.ts
+ create mode 100644 next-app/src/components/SearchField/SearchField.styles.ts
+ create mode 100644 next-app/src/components/SearchField/SearchField.tsx
+ create mode 100644 next-app/src/components/SearchField/index.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/CategoriesBar.tsx
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/SubheaderCategoriesMenu.tsx
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/index.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/CategoriesBurger.styles.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/CategoriesBurger.tsx
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesBurger/index.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/CategoriesList.styles.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/CategoriesList.tsx
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/templates/CategoriesList/index.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/SubheaderCategoriesMenu/types/index.ts
+ create mode 100644 next-app/src/content/appBar/CategoriesBar/index.ts
+ delete mode 100644 next-app/src/content/pages/ContentReadySlider/types/index.ts
+ create mode 100644 next-app/src/context/CatalogContext/CatalogContext.tsx
+ create mode 100644 next-app/src/context/CatalogContext/catalogReducer.ts
+ create mode 100644 next-app/src/context/CategoriesContext/CategoriesContext.tsx
+ create mode 100644 next-app/src/provider/api/b2bApi.ts
+ create mode 100644 next-app/src/types/category/index.ts
+ create mode 100644 next-app/src/types/store/catalog/index.ts
+ create mode 100644 next-app/src/types/store/categories/index.ts
+ create mode 100644 next-app/src/utils/useSearchParams.ts
